@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>海平线日出壁纸获取</title>
+  <style>
+    /* Reset & 基本样式 */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      /* 如果有本地图片，把 background-image 的 url 改为 'background.jpg' 或你的图片文件名 */
+      background:
+        /* 优先使用图片（如果存在）*/
+        url('background.jpg') no-repeat center center / cover,
+        /* 作为 fallback 使用斜向紫色渐变，近似图中配色 */
+        linear-gradient(135deg, #6f7be6 0%, #7a63d3 40%, #7f4aa8 100%);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 中央容器卡片（半透明白） */
+    .card {
+      width: min(560px, 86vw);
+      background: rgba(255,255,255,0.94);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(15,20,40,0.15);
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    /* 标题样式 — 白色在背景上明显，但卡片内我们展示黑色。如果你想标题在背景上直接显示（不在卡片内），把下面注释掉并参照示例2） */
+    .title {
+      font-size: 20px;
+      color: #111827;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    /* 按钮区域 */
+    .btn-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 999px;
+      /* 紫色按钮渐变，靠近图中颜色 */
+      background: linear-gradient(180deg, #8f7ff0 0%, #7454d9 100%);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(73,43,156,0.28), inset 0 -2px 0 rgba(0,0,0,0.08);
+      transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+    }
+
+    .btn:active { transform: translateY(1px); }
+    .btn:hover { filter: brightness(1.04); box-shadow: 0 10px 24px rgba(73,43,156,0.32); }
+
+    /* 响应式：窄屏时卡片更紧凑 */
+    @media (max-width: 480px) {
+      .card { padding: 20px; border-radius: 12px; }
+      .title { font-size: 18px; }
+      .btn { padding: 10px 22px; font-size: 15px; }
+    }
+
+    /* --- 可选：如果你想把标题直接放在背景上（不在白色卡片内），使用下面的样式： */
+    /* .floating-title {
+         position: absolute;
+         top: 40%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+         color: #ffffff;
+         font-weight: 700;
+         font-size: 28px;
+         text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+       } */
+  </style>
+</head>
+<body>
+  <!-- 如果想标题直接在背景上显示，取消注释下面一行并注释掉 card 内的 .title -->
+  <!-- <div class="floating-title">海平线日出壁纸获取</div> -->
+
+  <div class="card" role="region" aria-label="海平线日出壁纸获取卡片">
+    <div class="title">海平线日出壁纸获取</div>
+
+    <!-- 这里你可以放说明或预览 -->
+    <div style="color:#6b6b6b; font-size:14px; line-height:1.5; margin-bottom:18px;">
+      点击下方按钮获取高质量壁纸（将打开网盘页面）
+    </div>
+
+    <div class="btn-wrap">
+      <a href="https://pan.baidu.com/j/1qnGPVTCAvX" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+        <button class="btn" type="button">获取</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // 可选：防止按钮被回车误触或做额外埋点
+    document.querySelectorAll('.btn').forEach(btn=>{
+      btn.addEventListener('click', ()=> {
+        // 附加行为可以在这里添加（例如统计），目前仅打开链接（由 <a> 处理）
+      });
+    });
+  </script>
+</body>
+</html>
